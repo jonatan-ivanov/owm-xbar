@@ -1,2 +1,3 @@
 # owm-xbar
-Minimalistic OpenWeatherMap bar
+
+Minimalist OpenWeatherMap bar
