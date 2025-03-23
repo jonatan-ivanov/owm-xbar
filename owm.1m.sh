@@ -53,7 +53,7 @@ function printIcon() {
 
 WEATHER_DATA=$(curl --silent "https://api.openweathermap.org/data/2.5/weather?zip=${VAR_ZIP_CODE}&units=metric&appid=${VAR_API_KEY}")
 
-echo "$WEATHER_DATA" | /usr/local/bin/jq -j '"\(.main.temp | tonumber | round)°C "'
-printIcon "$(echo "$WEATHER_DATA" | /usr/local/bin/jq -r '.weather[0].id')"
+echo "$WEATHER_DATA" | /opt/homebrew/bin/jq -j '"\(.main.temp | tonumber | round)°C "'
+printIcon "$(echo "$WEATHER_DATA" | /opt/homebrew/bin/jq -r '.weather[0].id')"
 echo '---'
-echo "$WEATHER_DATA" | /usr/local/bin/jq -r '"\(.weather[0].main), feels like: \(.main.feels_like | tonumber | round)°C\n---\nmin/max: \(.main.temp_min | tonumber | round)-\(.main.temp_max | tonumber | round)°C"'
+echo "$WEATHER_DATA" | /opt/homebrew/bin/jq -r '"\(.weather[0].main), feels like: \(.main.feels_like | tonumber | round)°C\n---\nmin/max: \(.main.temp_min | tonumber | round)-\(.main.temp_max | tonumber | round)°C"'
